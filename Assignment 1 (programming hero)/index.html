@@ -1,0 +1,756 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Assignment_1 (Programming Hero)</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* 1_navbarSection Starts*/
+  body {
+    margin: 0;
+    font-family: Inter, system-ui, sans-serif;
+    background: white;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+  }
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 0;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .logo img {
+    width: 100px;
+    height: auto;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 30px;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: #1a202c;
+  }
+
+  .nav-links a:hover {
+    color: #2f855a;
+  }
+
+  /* Right Button (Get Early Access) */
+  .nav-btn a {
+    background: #3b855f;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .nav-btn a:hover {
+    background: #2f6f4f;
+  }
+
+  /* need recheck this */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+  }
+/* 1_navbar section ends */
+
+/* 2_banner section starts */
+
+/* banner */
+.banner-section {
+  position: relative;
+  height: 520px;
+  background-image: url("/Assignment 1 (programming hero)/images/hero-bg.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg,rgba(8, 24, 36, 0.5),rgba(10, 40, 60, 0.6));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.banner-content {
+  max-width: 780px;
+  color: white;
+}
+
+/* early access */
+.banner-earlyAccessAnnouncement {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  color: #2e8b42;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.earlyAccess-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #22c55e;
+}
+
+/* banner headline */
+.banner-content h1 {
+  font-size: 52px;
+  line-height: 1.1;
+  margin: 0 0 14px;
+  font-weight: 800;
+}
+
+.banner-highlight {
+  color: #22c55e;
+}
+
+/* banner subtext */
+.banner-content p {
+  font-size: 16px;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 26px;
+}
+
+/* banner buttons */
+.banner-buttons {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* arrow icon */
+.btn-primary {
+  background: #3b855f;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  /* display: grid;
+  place-items: center;
+  overflow: hidden; */
+}
+
+/* .btn-primary img{
+  width: 10px;
+  height: 10px;
+  object-fit: contain;
+} */
+
+.btn-primary:hover {
+  background: #2f6f4f;
+}
+
+/* pause icon */
+.btn-outline {
+  border: 1px solid rgba(255,255,255,0.6);
+  color: white;
+  padding: 12px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  /* display: grid;
+  place-items: center;
+  overflow: hidden; */
+}
+
+/* .btn-outline img{
+  width: 10px;
+  height: 10px;
+  object-fit: contain;
+} */
+
+.btn-outline:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+@media (max-width: 768px) {
+  .banner-content h1 {
+    font-size: 38px;
+  }
+}
+
+/* 2_banner section ends */
+
+/* 3_notes section starts */
+.notes-section{
+  background: #f6f7fb;
+  padding: 70px 0 80px;
+}
+
+.notes-container{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.notes-title{
+  margin: 0 0 10px;
+  font-size: clamp(28px, 3vw, 44px);
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  color: #0b1f2f;
+}
+
+.notes-subtitle{
+  margin: 0 auto 34px;
+  max-width: 70ch;
+  font-size: 15px;
+  color: #6b7786;
+  line-height: 1.6;
+}
+
+.notes-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.notes-card{
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 14px;
+  padding: 34px 22px 30px;
+  box-shadow: 0 12px 28px rgba(2, 6, 23, 0.08);
+  min-height: 270px;
+}
+
+.notes-icon{
+  width: 58px;
+  height: 58px;
+  border-radius: 999px;
+  background: #ff5a5f;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 18px;
+}
+
+.notes-icon img{
+  width: 26px; 
+  height: 26px;
+  object-fit: contain;
+  display: block;
+}
+
+.notes-card h3{
+  margin: 0 0 10px;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  color: #0b1f2f;
+  line-height: 1.15;
+}
+
+.notes-card p{
+  margin: 0;
+  color: #6b7786;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+
+@media (max-width: 980px){
+  .notes-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px){
+  .notes-grid{ grid-template-columns: 1fr; }
+}
+/* 3_notes_section ends */
+
+/* 4_second_brain section starts  */
+.secondbrain-section{
+  background: #f6f7fb;
+  padding: 80px 0;
+}
+
+.secondbrain-container{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.secondbrain-visual{
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 28px;
+  box-shadow: 0 14px 32px rgba(2,6,23,0.08);
+  min-height: 520px;
+
+  display: grid;
+  place-items: center;
+}
+
+.secondbrain-image{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+.secondbrain-solution{
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: #2f855a;
+  margin-bottom: 12px;
+}
+
+.secondbrain-title{
+  margin: 0 0 16px;
+  font-size: clamp(34px, 3.2vw, 46px);
+  line-height: 1.1;
+  font-weight: 900;
+  letter-spacing: -0.8px;
+  color: #0b1f2f;
+}
+
+.secondbrain-description{
+  margin: 0 0 22px;
+  max-width: 52ch;
+  color: #6b7786;
+  line-height: 1.7;
+  font-size: 15.5px;
+}
+
+.secondbrain-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.secondbrain-list li{
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  color: #0b1f2f;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.secondbrain-check{
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #22c55e;
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+  font-weight: 900;
+  margin-top: 2px;
+}
+
+@media (max-width: 980px){
+  .secondbrain-container{
+    grid-template-columns: 1fr;
+  }
+  .secondbrain-visual{
+    min-height: 420px;
+  }
+}
+
+/* 4_second_brain section ends  */
+
+/* 5_early_access section starts */
+
+
+.early-access-section{
+  background: #f6f7fb;
+  padding: 80px 20px 100px;
+}
+
+.early-access-box{
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #efe5c7; 
+  border-radius: 18px;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.early-access-box h2{
+  margin: 0 0 12px;
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 900;
+  letter-spacing: -0.6px;
+  color: #0b1f2f;
+}
+
+.early-access-text{
+  margin: 0 auto 26px;
+  max-width: 60ch;
+  font-size: 16px;
+  color: #6b7786;
+  line-height: 1.6;
+}
+
+.early-access-btn{
+  display: inline-block;
+  background: #3b855f;
+  color: #ffffff;
+  padding: 14px 26px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.early-access-btn:hover{
+  background: #2f6f4f;
+}
+
+.early-access-note{
+  margin-top: 18px;
+  font-size: 14px;
+  color: #7a8796;
+}
+
+@media (max-width: 600px){
+  .early-access-box{
+    padding: 46px 18px;
+  }
+}
+
+/* 5_early_access section ends  */
+
+/* 6_footer section starts  */
+
+.site-footer{
+  background: linear-gradient(180deg, #04162a, #021226);
+  padding: 50px 0 30px;
+  color: rgba(255,255,255,0.9);
+}
+
+.footer-container{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-top{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-logo{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-logo img{
+  width: 80px;
+  height: 30px;
+}
+
+.footer-social p{
+  margin: 0 0 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.social-icons{
+  display: flex;
+  gap: 12px;
+}
+
+.social-icons a{
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18);
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 14px;
+  color: white;
+  text-decoration: none;
+}
+
+.social-icons a:hover{
+  background: rgba(255,255,255,0.15);
+}
+
+.footer-divider{
+  margin: 30px 0 18px;
+  height: 1px;
+  background: rgba(255,255,255,0.12);
+}
+
+.footer-bottom{
+  margin: 0;
+  text-align: center;
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);
+}
+
+@media (max-width: 768px){
+  .footer-top{
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+}
+ /* 6_footer section ends  */ 
+
+</style>
+
+
+<!-- html section satrts -->
+</head>
+
+<body>
+
+<header>
+  <div class="container navbar">
+
+    <div class="logo">
+      <img src="/Assignment 1 (programming hero)/images/logo-navbar.png" alt="navbar logo">
+    </div>
+
+    <nav class="nav-links">
+      <a href="#">Features</a>
+      <a href="#">How It Works</a>
+      <a href="#">Why It's Different</a>
+    </nav>
+
+    <!-- Right Button (Get Early Access) -->
+    <div class="nav-btn">
+      <a href="#">Get Early Access</a>
+    </div>
+
+  </div>
+</header>
+
+<!-- 2_banner section starts -->
+<!-- banner -->
+<section class="banner-section">
+  <div class="banner-overlay">
+    <div class="banner-content">
+
+      <!-- Early Access Announcement -->
+      <div class="banner-earlyAccessAnnouncement">
+        <span class="earlyAccess-dot">
+          <!-- <img src="images/CheckCircle.png" alt=""> -->
+        </span>
+        <span>Early Access Now Open</span>
+      </div>
+
+      <!-- headline -->
+      <h1>
+        Structured Thinking,<br>
+        <span class="banner-highlight">Not Just Note-Taking.</span>
+      </h1>
+
+      <!-- subtext -->
+      <p>
+        A private space to store notes, links, and learning summaries — designed to help you think clearly, connect ideas, and turn learning into long-term knowledge.
+      </p>
+
+      <!-- Buttons -->
+      <div class="banner-buttons">
+        <a href="#" class="btn-primary"> Start Building Your Vault →
+        </a>
+        <a href="#" class="btn-outline">  
+          ▶ See How It Works </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- 2_banner section ends -->
+
+<!-- 3_notes_section starts -->
+<section class="notes-section" id="features">
+  <div class="notes-container">
+    <h2 class="notes-title">Notes Don't Fail, Structure Does.</h2>
+    <p class="notes-subtitle">
+      You're not bad at learning. Your tools just weren't built for how knowledge actually works.
+    </p>
+
+    <div class="notes-grid">
+      <!-- Card 1 -->
+      <article class="notes-card">
+        <div class="notes-icon">
+          <img src="/Assignment 1 (programming hero)/images/Vector.png" alt="Scattered notes icon">
+        </div>
+        <h3>Scattered Notes</h3>
+        <p>Your ideas live in 10 different apps, none of them connected.</p>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="notes-card">
+        <div class="notes-icon">
+          <img src="/Assignment 1 (programming hero)/images/Bookmarks.png" alt="Bookmark icon">
+        </div>
+        <h3>Bookmark Overload</h3>
+        <p>Hundreds of saved links you'll never revisit or remember.</p>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="notes-card">
+        <div class="notes-icon">
+          <img src="/Assignment 1 (programming hero)/images/Brain.png" alt="Brain icon">
+        </div>
+        <h3>No Idea Connections</h3>
+        <p>Insights stay isolated, never building into bigger understanding.</p>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="notes-card">
+        <div class="notes-icon">
+          <img src="/Assignment 1 (programming hero)/images/Info.png" alt="Info icon">
+        </div>
+        <h3>Forgetting What<br> You Learned</h3>
+        <p>Knowledge fades because there's no system to retain it.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 3_notes_section ends -->
+
+<!-- 4_second_brain section starts -->
+<section class="secondbrain-section" id="different">
+  <div class="secondbrain-container">
+
+    <div class="secondbrain-visual">
+      <img class="secondbrain-image" src="/Assignment 1 (programming hero)/images/knowledge.png" alt="Connected ideas illustration" />
+    </div>
+
+    <div class="secondbrain-content">
+      <div class="secondbrain-solution">THE SOLUTION</div>
+
+      <h2 class="secondbrain-title">
+        Your Second Brain,<br />
+        Structured By Design.
+      </h2>
+
+      <p class="secondbrain-description">
+        Personal Knowledge Vault isn't another note-taking app.
+        It's a thinking environment where every note, link, and summary
+        becomes part of an interconnected web of understanding.
+      </p>
+
+      <ul class="secondbrain-list">
+        <li><span class="secondbrain-check">✓</span> Capture ideas with structure built-in from day one</li>
+        <li><span class="secondbrain-check">✓</span> Connect related concepts automatically as you write</li>
+        <li><span class="secondbrain-check">✓</span> Build lasting knowledge through reflection prompts</li>
+        <li><span class="secondbrain-check">✓</span> Find anything instantly with semantic search</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- 4_second_brain section ends -->
+
+<!-- 5_early_access section starts -->
+<section class="early-access-section" id="early-access">
+  <div class="early-access-box">
+
+    <h2>Ready To Think More Clearly?</h2>
+
+    <p class="early-access-text">
+      Join thousands of learners who are building their personal knowledge vaults.<br>
+      Start free, no credit card required.
+    </p>
+
+    <a href="#" class="early-access-btn">
+      Get Early Access →
+    </a>
+
+    <p class="early-access-note">
+      Free during early access • No credit card needed
+    </p>
+
+  </div>
+</section>
+
+<!-- 5_early_access section ends -->
+
+<!-- 6_footer section starts -->
+<footer class="site-footer">
+  <div class="footer-container">
+
+    <div class="footer-top">
+
+      <div class="footer-logo">
+        <img src="/Assignment 1 (programming hero)/images/logo-footer.png" alt="footer logo">
+      </div>
+
+      <div class="footer-social">
+        <p>Social Links</p>
+        <div class="social-icons">
+          <a href="#" aria-label="X">x</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="Facebook">f</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <p class="footer-bottom">
+      © 2026 Personal Knowledge Vault. All rights reserved.
+    </p>
+
+  </div>
+</footer>
+<!-- 6_footer section ends -->
+
+</body>
+</html>
